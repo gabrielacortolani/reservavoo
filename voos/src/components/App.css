@@ -1,0 +1,4 @@
+.App .Cartoes{
+    display: flex;
+    flex-wrap: wrap;
+}

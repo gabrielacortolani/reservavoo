@@ -1,0 +1,26 @@
+.Cartao {
+    
+    border: 5px solid;
+    overflow: hidden;  
+    margin: 5px;
+    
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    min-width: 300px;
+}
+
+.Cartao  .Titulo{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    color: black;
+    font-size:xx-large;
+}
+
+.Cartao .Conteudo{
+    background-color: rgb(247, 246, 246);
+    color: black;
+    padding: 20px;
+    flex-grow: 1;
+}
