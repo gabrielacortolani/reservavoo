@@ -3,13 +3,13 @@ import './Cartao.css'
 
 const Cartao = props => {
     let estilo ={
-        backgroundColor: props.color || '#AC0',
-        borderColor: props.color || 'AC0',
-        borderRadius: props.radio || 10
+        backgroundColor: '#0B2238', //'#FB2' || '#AC0',
+        borderColor: '#98A6B3',
+        borderRadius: 20
     }
     return(
         <div className = "Cartao" style={estilo}>
-            <div className = "Titulo">{props.titulo}</div>
+            <div className = "Titulo" color="white">{props.titulo}</div>
             <div className = "Conteudo">{props.children}</div>
         </div> 
     )

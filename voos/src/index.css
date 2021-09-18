@@ -1,9 +1,15 @@
 body{
-    background-color: #333;
+    background-color: #6C7780;
     color:aliceblue;
 }
 
 /* Deixa espansivo*/
+h1{ 
+    display: flex;
+    justify-content: center;
+    color:white
+
+}
 h2{ 
     display: flex;
     justify-content: center;
@@ -25,6 +31,6 @@ h3{
   }
 
   button{
-      background-color: #FB2;
+      background-color: #98A6B3;
       font-size:large;
   }
