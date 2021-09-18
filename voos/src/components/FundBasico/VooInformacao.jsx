@@ -4,7 +4,7 @@ export default function Parametro(props){
     return(
         <div>
             <h2>Vôo {props.numero}</h2>
-            <h3>{props.origem}-{props.destino}</h3>
+            <h3>{props.origem} - {props.destino}</h3>
             <h2>Lugares disponíveis: {props.lugarDisponivel}</h2>
             <div class="container">
                 <div class="vertical-center">
