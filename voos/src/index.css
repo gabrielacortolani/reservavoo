@@ -3,13 +3,12 @@ body{
     color:aliceblue;
 }
 
-/* Deixa espansivo*/
-h1{ 
+h1{
     display: flex;
     justify-content: center;
-    color:white
-
+    color:white;
 }
+/* Deixa espansivo*/
 h2{ 
     display: flex;
     justify-content: center;
