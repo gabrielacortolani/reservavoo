@@ -10,7 +10,9 @@ const App = () => {
         "origem":"Campinas",
         "destino":"São Paulo",
         "lugarDisponivel":10,
-        "data":"01/12/2021 1:30",
+        "data":"01/12/2021",
+        "hora_saida":"1:30",
+        "hora_chegada":"14:00",
         "companhia":"AZUL"
     },
     {
@@ -18,15 +20,19 @@ const App = () => {
         "origem":"Rio de Janeiro",
         "destino":"São Paulo",
         "lugarDisponivel":19,
-        "data":"23/01/2022 05:10",
+        "data":"23/01/2022",
+        "hora_saida": "05:10",
+        "hora_chegada":"6:15",
         "companhia":"GOL"
     },
     {
         "numero":3052,
         "origem":"Franca",
-        "destino":"Cristais Paulista",
+        "destino":"Ribeirão Preto",
         "lugarDisponivel":0,
-        "data":"20/12/2021 11:30",
+        "data":"20/12/2021",
+        "hora_saida":"11:30",
+        "hora_chegada":"12:00",
         "companhia":"PASSAREDO"
     },
     {
@@ -34,7 +40,9 @@ const App = () => {
         "origem":"Porto Alegre",
         "destino":"Caxias do Sul",
         "lugarDisponivel":57,
-        "data":"23/11/2021 13:30",
+        "data":"23/11/2021",
+        "hora_saida":"13:30",
+        "hora_chegada":"14:40",
         "companhia":"AZUL"
     },
     {
@@ -42,7 +50,9 @@ const App = () => {
         "origem":"Rio de Janeiro",
         "destino":"Maceio",
         "lugarDisponivel":45,
-        "data":"01/03/2022 00:00",
+        "data":"01/03/2022",
+        "hora_saida": "00:00",
+        "hora_chegada":"3:55",
         "companhia":"GOL"
     },
     {
@@ -50,7 +60,9 @@ const App = () => {
         "origem":"Manaus",
         "destino":"Rio Branco",
         "lugarDisponivel":34,
-        "data":"02/01/2022 14:25",
+        "data":"02/01/2022",
+        "hora_saida":"14:25",
+        "hora_chegada":"16:00",
         "companhia":"PASSAREDO"
     },
     {
@@ -58,7 +70,9 @@ const App = () => {
         "origem":"Fortaleza",
         "destino":"Recife",
         "lugarDisponivel":82,
-        "data":"25/02/2022 17:35",
+        "data":"25/02/2022",
+        "hora_saida":"17:35",
+        "hora_chegada":"19:00",
         "companhia":"PASSAREDO"
     },
     {
@@ -66,7 +80,9 @@ const App = () => {
         "origem":"Londrina",
         "destino":"Curitiba",
         "lugarDisponivel":4,
-        "data":"23/12/2021 19:55",
+        "data":"23/12/2021",
+        "hora_saida":"19:55",
+        "hora_chegada":"20:40",
         "companhia":"AZUL"
     },
     {
@@ -74,7 +90,9 @@ const App = () => {
         "origem":"Rio de Janeiro",
         "destino":"Fortaleza",
         "lugarDisponivel":71,
-        "data":"02/01/2022 14:05",
+        "data":"02/01/2022",
+        "hora_saida":"14:05",
+        "hora_chegada":"16:23",
         "companhia":"GOL"
     },
     {
@@ -82,7 +100,9 @@ const App = () => {
         "origem":"São Paulo",
         "destino":"Cuiaba",
         "lugarDisponivel":1,
-        "data":"01/12/2021 01:45",
+        "data":"01/12/2021",
+        "hora_saida": "01:45",
+        "hora_chegada":"3:20",
         "companhia":"PASSAREDO"
     }];
 
@@ -90,23 +110,33 @@ const App = () => {
         {"numero": 1013,
          "portao": 1,
          "companhia":"AZUL",
-         "hora":"13:00"},
+         "voo":"São Paulo - Salvador",
+         "saida":"13:00",
+         "chegada":"15:10"},
          {"numero": 1492,
          "portao": 2,
          "companhia":"GOL",
-         "hora":"13:15"},
+         "voo":"São Paulo - Manaus",
+         "saida":"13:15",
+         "chegada":"20:00"},
          {"numero": 1389,
          "portao": 6,
          "companhia":"AZUL",
-         "hora":"13:20"},
+         "voo":"Navegantes - Florianópolis",
+         "saida":"13:20",
+         "chegada":"14:10"},
          {"numero": 1384,
          "portao": 1,
          "companhia":"PASSAREDO",
-         "hora":"14:00"},
+         "voo":"São Paulo - Porto Alegre",
+         "saida":"14:00",
+         "chegada":"19:00"},
          {"numero": 3949,
          "portao": 4,
          "companhia":"AZUL",
-         "hora":"13:45"}
+         "voo":"Curitiba - Campo Grande",
+         "saida":"13:45",
+         "chegada":"18:00"}
     ]
 
     let informacoes = []
@@ -118,7 +148,10 @@ const App = () => {
                                 origem={objInformacao[i].origem}
                                 destino={objInformacao[i].destino}
                                 lugarDisponivel={objInformacao[i].lugarDisponivel}
-                                data={objInformacao[i].data}></VooInformacao>
+                                data={objInformacao[i].data}
+                                saida={objInformacao[i].hora_saida}
+                                chegada={objInformacao[i].hora_chegada}>
+                                </VooInformacao>
                 </Cartao>)
     }
     
@@ -132,7 +165,9 @@ const App = () => {
                     setVoo(proximosVoos[i].numero);
                     setCompanhia(proximosVoos[i].companhia);
                     setPortao(proximosVoos[i].portao);
-                    setHora(proximosVoos[i].hora);
+                    setHora(proximosVoos[i].saida);
+                    setChegada(proximosVoos[i].chegada)
+                    setOrigemDestino(proximosVoos[i].voo)
                 }
                 
             }
@@ -144,10 +179,12 @@ const App = () => {
 
     const [counter, setCounter] = React.useState(0);
     const [posicao, setPosicao] = React.useState(0);
-    const [voo, setVoo] = React.useState("");
+    const [nro, setVoo] = React.useState("");
     const [companhia, setCompanhia] = React.useState("");
     const [portao, setPortao] = React.useState();
     const [hora, setHora] = React.useState("");
+    const [chegada, setChegada] = React.useState("");
+    const [voo, setOrigemDestino] = React.useState("");
 
     React.useEffect(() => {
         counter >= 0 && timeout();
@@ -156,10 +193,12 @@ const App = () => {
     return (
         <div className="App">
             <div className="Cartoes">
-                <Painel voo={voo}
+                <Painel voo={nro}
+                        origemDestino={voo}
                         companhia={companhia}
                         portao={portao}
-                        hora={hora}/>
+                        hora={hora}
+                        chegada={chegada}/>
             </div>
             <h2>Reservas de vôos</h2>
             <div className="Cartoes">
@@ -171,4 +210,3 @@ const App = () => {
 }
 
 export default App
-  

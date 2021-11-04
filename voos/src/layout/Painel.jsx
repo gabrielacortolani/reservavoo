@@ -12,7 +12,18 @@ const Painel = props => {
         <div className="Painel"  style={estilo}>
             <div className = "Titulo">Próximos Voos</div>
             <div className="Conteudo">
-                <h2>VÔO: {props.voo} Companhia: {props.companhia} Horário: {props.hora} Portão: {props.portao}</h2>
+                <p>
+                    <h3>Companhia: {props.companhia} </h3>
+                </p>
+                <p>
+                    <h3>VÔO: {props.voo} - {props.origemDestino} </h3>
+                </p>
+                <p>
+                    <h3>Saída: {props.hora} Chegada: {props.chegada}</h3>
+                </p>
+                <p>
+                    <h3> Portão: {props.portao}</h3>
+                </p>
             </div>
         </div> 
     )

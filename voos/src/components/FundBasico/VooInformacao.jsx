@@ -19,6 +19,7 @@ export default function Parametro(props){
             <h2>Vôo {props.numero}</h2>
             <h3>{props.origem}-{props.destino}</h3>
             <h3>Data: {props.data}</h3>
+            <h3>Saída: {props.saida} Chegada: {props.chegada}</h3>
             <h3>Lugares disponíveis: {lugarDisponivel}</h3>
             <div class="container">
                 <div class="vertical-center">
